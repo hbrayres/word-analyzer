@@ -1,6 +1,7 @@
 package br.com.prover.wordanalyzer.util;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -23,7 +24,11 @@ public class WordAnalyzerUtil {
    */
   public static Map<String, Long> analyzePhrase(final String phrase) {
 
-    return Arrays.stream(phrase.toLowerCase().split("\\s+"))
+    if (phrase == null || phrase.trim().isEmpty()) {
+      return Collections.emptyMap();
+    }
+    
+    return Arrays.stream(phrase.replaceAll("[^\\p{L}]+", " ").toLowerCase().split("\\s+"))
         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
   }
 
