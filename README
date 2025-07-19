@@ -14,7 +14,7 @@ O sistema possui uma interface amigável, processa o texto de forma eficiente e 
 - JSF (JavaServer Faces)
 - PrimeFaces
 - Maven
-- Compatível com WildFly 10, Chrome e Edge
+- Compatível com WildFly, Chrome e Edge
 
 ---
 
