@@ -1,0 +1,91 @@
+Claro! Aqui está o arquivo README revisado, completo e bem formatado para facilitar o uso:
+
+```markdown
+# Word Analyzer
+
+## Objetivo
+Desenvolver um sistema web que permita ao usuário digitar uma frase e obter:
+- A quantidade de palavras distintas na frase.
+- A quantidade de ocorrências de cada palavra.
+
+O sistema possui uma interface amigável, processa o texto de forma eficiente e apresenta os resultados de maneira clara.
+
+---
+
+## Tecnologias Utilizadas
+- Java 8
+- JSF (JavaServer Faces)
+- PrimeFaces
+- Maven
+- Compatível com WildFly 10, Chrome e Edge
+
+---
+
+## Arquitetura
+- Segue o padrão MVC com arquitetura limpa, focando na manutenção e escalabilidade.
+- Comunicação entre frontend (JSF) e backend (Beans de controle e Serviços) via binding de componentes (EL).
+
+---
+
+## Como executar a aplicação
+
+### Requisitos
+- Java 8
+- WildFly 10 ou superior
+- Maven
+
+### Passos
+1. **Clone o repositório:**
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+2. **Construir o projeto com Maven:**
+```bash
+mvn clean package
+```
+Isso gerará um arquivo `.war` na pasta `target/`.
+
+3. **Implantação no WildFly**
+- Copie o arquivo `.war` gerado para a pasta de deployments do WildFly ou utilize o gerenciador de aplicações do WildFly para implantar.
+
+4. **Acessar a aplicação**
+- Abra o navegador e acesse: `http://localhost:8080/word-analyzer/`
+
+---
+
+## Como usar
+
+1. Insira uma frase no campo de entrada da interface.
+2. Clique no botão para disparar a análise.
+3. Os resultados aparecerão na tela, mostrando:
+   - Quantidade de palavras distintas.
+   - Cada palavra com seu número de ocorrências.
+
+---
+
+## Estrutura do código
+
+```
+word-analyzer/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── wordanalyzer/
+│   │   │           ├── bean/
+│   │   │           │   └── AnalyzerBean.java  # Controlador da view
+│   │   │           ├── service/
+│   │   │           │   └── WordAnalyzerService.java # Lógica de processamento
+│   │   │           └── util/
+│   │   │               └── WordAnalyzerUtil.java  # Utilitários, se necessário
+│   │   ├── resources/
+│   │   └── webapp/
+│   │       ├── WEB-INF/
+│   │       │   └── web.xml
+│   │       └── index.xhtml               # Página principal
+│   └── test/
+│       └── java/                        # Testes unitários (opcional)
+└── pom.xml                             # Arquivo de configuração Maven
+```
+
+---
