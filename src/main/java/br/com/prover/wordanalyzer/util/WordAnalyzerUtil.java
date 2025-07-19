@@ -22,8 +22,11 @@ public class WordAnalyzerUtil {
    * @return Um mapa com as palavras e seus contadores.
    */
   public static Map<String, Long> analyzePhrase(final String phrase) {
-
-    return Arrays.stream(phrase.toLowerCase().split("\\s+"))
+    if (phrase == null || phrase.trim().isEmpty()) {
+      return Collections.emptyMap();
+    }
+    
+    return Arrays.stream(phrase.replaceAll("[^\\p{L}]+", " ").toLowerCase().split("\\s+"))
         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
   }
 
